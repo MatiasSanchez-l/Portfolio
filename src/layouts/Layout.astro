@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import {ModeToggle} from "../components/modeToggle/ModeToggle";
+import Header from "../components/header/Header.astro";
+import Footer from "../components/footer/Footer.astro";
 ---
 
 <script is:inline>
@@ -18,7 +19,7 @@ import {ModeToggle} from "../components/modeToggle/ModeToggle";
             const isDark = document.documentElement.classList.contains('dark');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
-        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        observer.observe(document.documentElement, {attributes: true, attributeFilter: ['class']});
     }
 </script>
 
@@ -30,16 +31,11 @@ import {ModeToggle} from "../components/modeToggle/ModeToggle";
     <meta name="generator" content={Astro.generator}/>
     <title>Portfolio Matias</title>
 </head>
-<body>
-<header>
-    <h1>My Astro Layout</h1>
-    <ModeToggle client:load />
-</header>
-<main>
+<body class="min-h-screen flex flex-col">
+<Header/>
+<main class="flex-1">
     <slot/>
 </main>
-<footer>
-    <p>&copy; 2025 My Astro Portfolio</p>
-</footer>
+<Footer/>
 </body>
 </html>
