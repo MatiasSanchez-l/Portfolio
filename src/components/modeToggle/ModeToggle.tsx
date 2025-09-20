@@ -5,7 +5,7 @@ import { Switch } from "@/components/ui/switch";
 export function ModeToggle() {
   const [theme, setThemeState] = React.useState<
     "theme-light" | "dark" | "system"
-  >("theme-light");
+  >("dark");
 
   const handleOnCheckedChange = (checked: boolean) => {
     if (checked) {
