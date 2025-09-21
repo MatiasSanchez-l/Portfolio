@@ -2,6 +2,11 @@
 import '../styles/global.css';
 import Header from "../components/header/Header.astro";
 import Footer from "../components/footer/Footer.astro";
+import {useTranslations} from "../i18n/utils";
+import {languageList} from "../i18n/ui";
+
+const currentLang = Astro.currentLocale || 'en';
+const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 ---
 
 <script is:inline>
@@ -23,16 +28,16 @@ import Footer from "../components/footer/Footer.astro";
     }
 </script>
 
-<html lang="en">
+<html lang={currentLang}>
 <head>
     <meta charset="utf-8"/>
     <link rel="icon" type="image/svg+xml" href="/logo/mslogo.ico"/>
     <meta name="viewport" content="width=device-width"/>
     <meta name="generator" content={Astro.generator}/>
-    <title>Portfolio Matias</title>
+    <title>{translateLabels("head.title")}</title>
 </head>
 <body class="min-h-screen flex flex-col">
-<Header/>
+<Header />
 <main class="flex-1">
     <slot/>
 </main>

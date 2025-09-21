@@ -1,8 +1,9 @@
 ---
-import {ModeToggle} from "../modeToggle/ModeToggle";
 import {NavMenu} from "./navMenu/NavMenu";
+
+const currentLang = Astro.currentLocale || 'en';
 ---
 
 <header>
-    <NavMenu client:load/>
+    <NavMenu client:load currentLang={currentLang}/>
 </header>
