@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/dropdown-menu.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { languageList } from "@/i18n/ui.ts";
+import { Languages } from "lucide-react";
 
 interface LanguageDropdownProps {
   currentLang: string;
@@ -15,7 +16,10 @@ export function LanguageDropdown({ currentLang }: LanguageDropdownProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">{currentLang.toUpperCase()}</Button>
+        <Button variant="outline" size="default">
+          <Languages />
+          {currentLang.toUpperCase()}
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {Object.entries(languageList).map(([key, label]) => (
