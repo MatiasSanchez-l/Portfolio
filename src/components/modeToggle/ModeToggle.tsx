@@ -1,37 +1,24 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
+import { getThemePreference, applyTheme, type Theme } from "@/lib/theme";
 
 export function ModeToggle() {
-  const [theme, setThemeState] = React.useState<
-    "theme-light" | "dark" | "system"
-  >("dark");
+  const [theme, setThemeState] = React.useState<Theme>("dark");
 
   const handleOnCheckedChange = (checked: boolean) => {
-    if (checked) {
-      setThemeState("dark");
-    } else {
-      setThemeState("theme-light");
-    }
+    const newTheme: Theme = checked ? "dark" : "light";
+    setThemeState(newTheme);
+    applyTheme(newTheme);
   };
 
-  const isChecked: boolean =
-    theme === "dark" ||
-    (theme === "system" &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches);
+  const isChecked: boolean = theme === "dark";
 
   React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setThemeState(isDarkMode ? "dark" : "theme-light");
+    // Initialize theme from current state
+    const currentTheme = getThemePreference();
+    setThemeState(currentTheme);
   }, []);
-
-  React.useEffect(() => {
-    const isDark =
-      theme === "dark" ||
-      (theme === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-  }, [theme]);
 
   return (
     <div style={{ display: "flex" }}>
