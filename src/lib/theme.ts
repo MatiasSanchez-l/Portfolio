@@ -3,13 +3,14 @@
  */
 
 import type { Theme } from '@/types';
+import { THEME_STORAGE_KEY, DEFAULT_THEME } from './constants';
 
 /**
  * Gets the current theme preference from localStorage or system preference
  */
 export function getThemePreference(): Theme {
-  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-    return localStorage.getItem('theme') as Theme;
+  if (typeof localStorage !== 'undefined' && localStorage.getItem(THEME_STORAGE_KEY)) {
+    return localStorage.getItem(THEME_STORAGE_KEY) as Theme;
   }
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
@@ -36,7 +37,7 @@ export function initializeTheme(): void {
   if (typeof localStorage !== 'undefined') {
     const observer = new MutationObserver(() => {
       const isDark = document.documentElement.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light');
     });
     observer.observe(document.documentElement, {
       attributes: true,

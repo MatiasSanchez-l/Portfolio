@@ -1,7 +1,7 @@
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
-import { ModeToggle } from '@/components/modeToggle/ModeToggle';
-import { LanguageDropdown } from '@/components/languageDropdown/LanguageDropdown';
+import { ModeToggle } from '@/components/features/theme/ModeToggle';
+import { LanguageDropdown } from '@/components/features/i18n/LanguageDropdown';
 import { NavLinks } from './NavLinks';
 import type { MobileMenuProps } from '@/types';
 

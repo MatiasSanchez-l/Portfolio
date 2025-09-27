@@ -1,9 +1,0 @@
----
-import {NavMenu} from "./navMenu/NavMenu";
-
-const currentLang = Astro.currentLocale || 'en';
----
-
-<header>
-    <NavMenu client:load currentLang={currentLang}/>
-</header>

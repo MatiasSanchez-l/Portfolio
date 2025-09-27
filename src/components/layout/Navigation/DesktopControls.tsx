@@ -1,6 +1,6 @@
 import React from 'react';
-import { ModeToggle } from '@/components/modeToggle/ModeToggle';
-import { LanguageDropdown } from '@/components/languageDropdown/LanguageDropdown';
+import { ModeToggle } from '@/components/features/theme/ModeToggle';
+import { LanguageDropdown } from '@/components/features/i18n/LanguageDropdown';
 import type { DesktopControlsProps } from '@/types';
 
 export function DesktopControls({ currentLang }: DesktopControlsProps) {

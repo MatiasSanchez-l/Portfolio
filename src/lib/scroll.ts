@@ -3,6 +3,7 @@
  */
 
 import type { ScrollToSectionOptions } from '@/types';
+import { SCROLL_OFFSET, SCROLL_BEHAVIOR } from './constants';
 
 /**
  * Smoothly scrolls to a section by ID
@@ -10,7 +11,7 @@ import type { ScrollToSectionOptions } from '@/types';
  * @param options - Scroll options including offset and behavior
  */
 export function scrollToSection(sectionId: string, options: ScrollToSectionOptions = {}): void {
-  const { offset = 80, behavior = 'smooth' } = options;
+  const { offset = SCROLL_OFFSET, behavior = SCROLL_BEHAVIOR } = options;
   const element = document.getElementById(sectionId);
   if (element) {
     const elementPosition = element.getBoundingClientRect().top;
