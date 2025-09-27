@@ -1,11 +1,13 @@
-export const languageList = {
+import type { LanguageList, TranslationLabels } from "@/types";
+
+export const languageList: LanguageList = {
     en: "English",
     es: "Español",
 }
 
-export type LabelKey = keyof typeof labels['en'];
+export type LabelKey = keyof TranslationLabels;
 
-export const labels = {
+export const labels: Record<string, TranslationLabels> = {
   en: {
     "head.title":"Sanchez Matias | Portfolio",
     "nav.home": "Home",

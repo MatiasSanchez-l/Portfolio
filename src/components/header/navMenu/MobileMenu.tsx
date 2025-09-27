@@ -3,12 +3,7 @@ import { Separator } from '@/components/ui/separator';
 import { ModeToggle } from '@/components/modeToggle/ModeToggle';
 import { LanguageDropdown } from '@/components/languageDropdown/LanguageDropdown';
 import { NavLinks } from './NavLinks';
-
-interface MobileMenuProps {
-  isOpen: boolean;
-  currentLang: string;
-  onClose: () => void;
-}
+import type { MobileMenuProps } from '@/types';
 
 export function MobileMenu({ isOpen, currentLang, onClose }: MobileMenuProps) {
   return (

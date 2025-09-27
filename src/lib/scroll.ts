@@ -2,12 +2,15 @@
  * Scroll utility functions for single-page navigation
  */
 
+import type { ScrollToSectionOptions } from '@/types';
+
 /**
  * Smoothly scrolls to a section by ID
  * @param sectionId - The ID of the section to scroll to (without #)
- * @param offset - Optional offset from the top (default: 80px for header height)
+ * @param options - Scroll options including offset and behavior
  */
-export function scrollToSection(sectionId: string, offset: number = 80): void {
+export function scrollToSection(sectionId: string, options: ScrollToSectionOptions = {}): void {
+  const { offset = 80, behavior = 'smooth' } = options;
   const element = document.getElementById(sectionId);
   if (element) {
     const elementPosition = element.getBoundingClientRect().top;
@@ -15,7 +18,7 @@ export function scrollToSection(sectionId: string, offset: number = 80): void {
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
+      behavior
     });
   }
 }

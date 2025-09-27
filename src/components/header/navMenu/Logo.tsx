@@ -1,8 +1,9 @@
 import React from 'react';
+import type { LogoProps } from '@/types';
 
-export function Logo() {
+export function Logo({ className }: LogoProps) {
   return (
-    <a href="/" className="flex items-center">
+    <a href="/" className={`flex items-center ${className || ''}`}>
       <img
         src="/logo/logo.png"
         alt="Logo"

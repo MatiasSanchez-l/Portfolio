@@ -4,10 +4,7 @@ import { NavLinks } from "./NavLinks";
 import { MobileMenuButton } from "./MobileMenuButton";
 import { MobileMenu } from "./MobileMenu";
 import { DesktopControls } from "./DesktopControls";
-
-interface NavMenuProps {
-  currentLang: string;
-}
+import type { NavMenuProps } from '@/types';
 
 export function NavMenu({ currentLang }: NavMenuProps) {
   const [isOpen, setIsOpen] = useState(false);

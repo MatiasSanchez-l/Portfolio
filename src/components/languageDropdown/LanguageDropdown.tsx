@@ -7,10 +7,7 @@ import {
 import { Button } from "@/components/ui/button.tsx";
 import { languageList } from "@/i18n/ui.ts";
 import { Languages } from "lucide-react";
-
-interface LanguageDropdownProps {
-  currentLang: string;
-}
+import type { LanguageDropdownProps } from "@/types";
 
 export function LanguageDropdown({ currentLang }: LanguageDropdownProps) {
   return (

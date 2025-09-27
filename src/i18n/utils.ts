@@ -1,9 +1,10 @@
 import {labels} from "@/i18n/ui.ts";
+import type { SupportedLanguage, TranslationLabels } from "@/types";
 
-const defaultLang = "en";
+const defaultLang: SupportedLanguage = "en";
 
-export function useTranslations(lang: keyof typeof labels) {
-  return function t(key: keyof (typeof labels)[typeof defaultLang]) {
+export function useTranslations(lang: SupportedLanguage) {
+  return function t(key: keyof TranslationLabels) {
     return labels[lang][key] || labels[defaultLang][key];
   };
 }

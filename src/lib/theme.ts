@@ -2,7 +2,7 @@
  * Theme utility functions for managing dark/light mode
  */
 
-export type Theme = 'light' | 'dark';
+import type { Theme } from '@/types';
 
 /**
  * Gets the current theme preference from localStorage or system preference

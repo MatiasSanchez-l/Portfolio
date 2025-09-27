@@ -1,9 +1,5 @@
 // src/lib/navigation.ts
-export interface NavItem {
-    href: string;
-    labelKey: string; // i18n key
-    external?: boolean;
-  }
+import type { NavItem } from '@/types';
   
   export const navigation: NavItem[] = [
     { href: '#home', labelKey: 'nav.home' },

@@ -1,19 +1,11 @@
 import React from 'react';
-import { useTranslations } from '@/i18n/utils';
-import { languageList } from '@/i18n/ui';
+import { useTranslations } from '@/hooks/useTranslations';
 import { navigation } from '@/lib/navigation';
 import { handleSectionNavigation } from '@/lib/scroll';
-
-interface NavLinksProps {
-  currentLang: string;
-  onLinkClick?: () => void;
-  className?: string;
-}
+import type { NavLinksProps } from '@/types';
 
 export function NavLinks({ currentLang, onLinkClick, className = '' }: NavLinksProps) {
-  const translateLabels = useTranslations(
-    currentLang as keyof typeof languageList,
-  );
+  const { t } = useTranslations(currentLang);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -29,7 +21,7 @@ export function NavLinks({ currentLang, onLinkClick, className = '' }: NavLinksP
             className="block py-2 hover:text-primary transition-colors cursor-pointer"
             onClick={(e) => handleClick(e, item.href)}
           >
-            {translateLabels(item.labelKey as any)}
+            {t(item.labelKey)}
           </a>
         </li>
       ))}
