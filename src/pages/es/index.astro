@@ -1,28 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Profile } from "@/components/common/profile/Profile";
 ---
 
 <Layout>
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Matias Sanchez</h1>
-            <p class="text-xl md:text-2xl text-muted-foreground mb-8">Desarrollador Full Stack</p>
-            <a href="#about" class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-                Saber Más
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center bg-background">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Acerca de Mí</h2>
-            <p class="text-lg text-muted-foreground text-center">
-                Soy un desarrollador full-stack apasionado con experiencia en tecnologías web modernas.
-                Me encanta crear aplicaciones hermosas y funcionales que resuelven problemas del mundo real.
-            </p>
-        </div>
+        <Profile currentLang="es" client:visible/>
     </section>
 
     <!-- Experience Section -->

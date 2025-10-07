@@ -87,3 +87,5 @@ export interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
 }
+
+export interface ProfileProps extends LanguageProps {}
