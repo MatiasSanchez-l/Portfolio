@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { Profile } from "@/components/common/profile/Profile";
 import { Timeline } from "@/components/common/timeline/Timeline";
 import { Projects } from "@/components/common/projects/Projects";
+import { Education } from "@/components/common/education/Education";
 ---
 
 <Layout>
@@ -27,5 +28,12 @@ import { Projects } from "@/components/common/projects/Projects";
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="min-h-screen flex items-center justify-center bg-muted">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Educación</h2>
+            <Education currentLang="es" client:visible/>
+        </div>
+    </section>
     
 </Layout>

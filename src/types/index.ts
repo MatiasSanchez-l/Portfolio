@@ -93,3 +93,5 @@ export interface ProfileProps extends LanguageProps {}
 export interface TimelineProps extends LanguageProps {}
 
 export interface ProjectsProps extends LanguageProps {}
+
+export interface EducationProps extends LanguageProps {}
