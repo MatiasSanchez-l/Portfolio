@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Profile } from "@/components/common/profile/Profile";
+import { Timeline } from "@/components/common/timeline/Timeline";
 ---
 
 <Layout>
@@ -13,19 +14,8 @@ import { Profile } from "@/components/common/profile/Profile";
     <!-- Experience Section -->
     <section id="experience" class="min-h-screen flex items-center justify-center bg-muted">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Experience</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-background p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-2">Frontend Developer</h3>
-                    <p class="text-muted-foreground">2023 - Present</p>
-                    <p class="mt-4">Building responsive web applications with React, TypeScript, and modern CSS frameworks.</p>
-                </div>
-                <div class="bg-background p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-2">Full Stack Developer</h3>
-                    <p class="text-muted-foreground">2022 - 2023</p>
-                    <p class="mt-4">Developing end-to-end solutions with Node.js, Express, and various databases.</p>
-                </div>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Experience</h2>
+            <Timeline currentLang="en" client:visible/>
         </div>
     </section>
 
