@@ -2,29 +2,38 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import type { ProfileProps } from "@/types";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/hooks/useTranslations";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Download } from "lucide-react";
 
 export function Profile({ currentLang }: ProfileProps) {
   const { t } = useTranslations(currentLang);
+  const avatarRef = useScrollReveal({ delay: 0 });
+  const greetingRef = useScrollReveal({ delay: 100 });
+  const nameRef = useScrollReveal({ delay: 200 });
+  const titleRef = useScrollReveal({ delay: 300 });
+  const descRef = useScrollReveal({ delay: 400 });
+  const buttonsRef = useScrollReveal({ delay: 500 });
 
   return (
     <div className="flex flex-col items-center justify-center px-4">
-      <Avatar className="w-32 h-32 mb-6">
-        <AvatarImage
-          src="https://avatars.githubusercontent.com/u/28885658?v=4"
-          alt="Matias Sanchez"
-        />
-        <AvatarFallback className="text-2xl">MS</AvatarFallback>
-      </Avatar>
-      <h2 className="text-xl md:text-3xl font-bold mb-4 text-orange-500">{t("profile.greeting")}</h2>
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">{t("profile.name")}</h1>
-      <p className="text-xl md:text-2xl text-muted-foreground mb-8">{t("profile.title")}</p>
-      <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl text-center leading-relaxed">
+      <div ref={avatarRef}>
+        <Avatar className="w-32 h-32 mb-6">
+          <AvatarImage
+            src="https://avatars.githubusercontent.com/u/28885658?v=4"
+            alt="Matias Sanchez"
+          />
+          <AvatarFallback className="text-2xl">MS</AvatarFallback>
+        </Avatar>
+      </div>
+      <h2 ref={greetingRef} className="text-xl md:text-3xl font-bold mb-4 text-orange-500">{t("profile.greeting")}</h2>
+      <h1 ref={nameRef} className="text-4xl md:text-6xl font-bold mb-4">{t("profile.name")}</h1>
+      <p ref={titleRef} className="text-xl md:text-2xl text-muted-foreground mb-8">{t("profile.title")}</p>
+      <p ref={descRef} className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl text-center leading-relaxed">
         {t("profile.description")}
       </p>
       
       {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+      <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 items-center justify-center">
         <Button asChild variant="default" size="lg">
           <a 
             href="https://www.linkedin.com/in/matiassanchez-l/" 

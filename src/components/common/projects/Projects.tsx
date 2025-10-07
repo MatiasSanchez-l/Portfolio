@@ -1,5 +1,6 @@
 import type { ProjectsProps } from "@/types";
 import { useTranslations } from "@/hooks/useTranslations";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -16,6 +17,7 @@ interface Project {
 
 export function Projects({ currentLang }: ProjectsProps) {
   const { t } = useTranslations(currentLang);
+  const containerRef = useScrollReveal({ delay: 0 });
 
   const projects: Project[] = [
     {
@@ -39,7 +41,7 @@ export function Projects({ currentLang }: ProjectsProps) {
   ];
 
   return (
-    <div className="grid md:grid-cols-2 gap-6">
+    <div ref={containerRef} className="grid md:grid-cols-2 gap-6 reveal-stagger">
       {projects.map((project) => (
         <div 
           key={project.id} 

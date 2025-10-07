@@ -119,3 +119,100 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Scroll Reveal Animations */
+@layer utilities {
+  .reveal-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  
+  /* Fade in from bottom */
+  .reveal-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal-fade-up.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Fade in from left */
+  .reveal-fade-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal-fade-left.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Fade in from right */
+  .reveal-fade-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal-fade-right.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Scale fade in */
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal-scale.reveal-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Stagger children animations */
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .reveal-stagger.reveal-visible > *:nth-child(1) {
+    animation: revealStagger 0.6s ease-out 0.1s forwards;
+  }
+  
+  .reveal-stagger.reveal-visible > *:nth-child(2) {
+    animation: revealStagger 0.6s ease-out 0.2s forwards;
+  }
+  
+  .reveal-stagger.reveal-visible > *:nth-child(3) {
+    animation: revealStagger 0.6s ease-out 0.3s forwards;
+  }
+  
+  .reveal-stagger.reveal-visible > *:nth-child(4) {
+    animation: revealStagger 0.6s ease-out 0.4s forwards;
+  }
+  
+  .reveal-stagger.reveal-visible > *:nth-child(5) {
+    animation: revealStagger 0.6s ease-out 0.5s forwards;
+  }
+  
+  .reveal-stagger.reveal-visible > *:nth-child(n+6) {
+    animation: revealStagger 0.6s ease-out 0.6s forwards;
+  }
+  
+  @keyframes revealStagger {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

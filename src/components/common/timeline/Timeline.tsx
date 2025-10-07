@@ -1,5 +1,6 @@
 import type { TimelineProps } from "@/types";
 import { useTranslations } from "@/hooks/useTranslations";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Badge } from "@/components/ui/badge";
 
 interface Experience {
@@ -76,9 +77,11 @@ export function Timeline({ currentLang }: TimelineProps) {
     }
   ];
 
+  const containerRef = useScrollReveal({ delay: 0 });
+  
   return (
     <div className="relative">
-      <div className="space-y-8">
+      <div ref={containerRef} className="space-y-8 reveal-stagger">
         {experiences.map((exp, index) => (
           <div key={exp.id} className="relative flex gap-6">
             {/* Timeline dot */}

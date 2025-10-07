@@ -1,5 +1,6 @@
 import type { EducationProps } from "@/types";
 import { useTranslations } from "@/hooks/useTranslations";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface EducationItem {
   id: string;
@@ -16,6 +17,7 @@ interface EducationItem {
 
 export function Education({ currentLang }: EducationProps) {
   const { t } = useTranslations(currentLang);
+  const containerRef = useScrollReveal({ delay: 0 });
 
   const education: EducationItem[] = [
     {
@@ -43,7 +45,7 @@ export function Education({ currentLang }: EducationProps) {
   ];
 
   return (
-    <div className="space-y-8">
+    <div ref={containerRef} className="space-y-8 reveal-stagger">
       {education.map((edu) => (
         <div 
           key={edu.id}
