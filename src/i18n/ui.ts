@@ -37,6 +37,11 @@ export const labels: Record<string, TranslationLabels> = {
     "profile.experience.artekium.period": "June 2021 – March 2022 · 10 months",
     "profile.experience.artekium.type": "Remote",
     "profile.experience.artekium.description": "Worked on the RUS project developing Java applications with Spring framework. Integrated frontend components with Angular and ZK.",
+    "projects.cuentita.name": "Cuentita",
+    "projects.cuentita.description": "Personal banking management page to easily store and share CVU/CBU from different banks and fintechs.",
+    "projects.juntosxoscar.name": "Juntos x Oscar",
+    "projects.juntosxoscar.description": "Fundraising website to help Oscar raise money and support his illness.",
+    "projects.viewLive": "View",
   },
   es: {
     "head.title":"Sanchez Matias | Portafolio",
@@ -67,5 +72,10 @@ export const labels: Record<string, TranslationLabels> = {
     "profile.experience.artekium.period": "Junio 2021 – Marzo 2022 · 10 meses",
     "profile.experience.artekium.type": "Remoto",
     "profile.experience.artekium.description": "Trabajé en el proyecto RUS desarrollando aplicaciones Java con el framework Spring. Integré componentes frontend con Angular y ZK.",
+    "projects.cuentita.name": "Cuentita",
+    "projects.cuentita.description": "Página personal de gestión bancaria para almacenar y compartir fácilmente CVU/CBU de diferentes bancos y fintechs.",
+    "projects.juntosxoscar.name": "Juntos x Oscar",
+    "projects.juntosxoscar.description": "Sitio web de recaudación de fondos para ayudar a Oscar a juntar dinero y asistir su enfermedad.",
+    "projects.viewLive": "Ver",
   },
 };

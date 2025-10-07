@@ -91,3 +91,5 @@ export interface ThemeContextType {
 export interface ProfileProps extends LanguageProps {}
 
 export interface TimelineProps extends LanguageProps {}
+
+export interface ProjectsProps extends LanguageProps {}

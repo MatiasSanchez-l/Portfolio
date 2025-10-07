@@ -1,5 +1,6 @@
 import type { TimelineProps } from "@/types";
 import { useTranslations } from "@/hooks/useTranslations";
+import { Badge } from "@/components/ui/badge";
 
 interface Experience {
   id: string;
@@ -140,12 +141,9 @@ export function Timeline({ currentLang }: TimelineProps) {
                   </h5>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
-                      >
+                      <Badge key={tech} variant="secondary">
                         {tech}
-                      </span>
+                      </Badge>
                     ))}
                   </div>
                 </div>
