@@ -18,7 +18,7 @@ export function MobileMenu({ isOpen, currentLang, onClose }: MobileMenuProps) {
           onLinkClick={onClose}
           className="flex-col gap-4"
         />
-        <div className="flex items-center gap-4 pt-4">
+        <div className="flex items-center justify-center gap-4 pt-4 pb-4">
           <ModeToggle />
           <LanguageDropdown currentLang={currentLang} />
         </div>

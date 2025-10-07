@@ -10,11 +10,10 @@ export type LabelKey = keyof TranslationLabels;
 export const labels: Record<string, TranslationLabels> = {
   en: {
     "head.title":"Sanchez Matias | Portfolio",
-    "nav.home": "Home",
-    "nav.about": "About",
+    "nav.profile": "Profile",
     "nav.experience": "Experience",
     "nav.projects": "Projects",
-    "nav.contact": "Contact",
+    "nav.education": "Education",
     "nav.openMenu": "Open menu",
     "nav.closeMenu": "Close menu",
     "profile.greeting": "Hello, my name is",
@@ -52,11 +51,10 @@ export const labels: Record<string, TranslationLabels> = {
   },
   es: {
     "head.title":"Sanchez Matias | Portafolio",
-    "nav.home": "Inicio",
-    "nav.about": "Acerca de",
+    "nav.profile": "Perfil",
     "nav.experience": "Experiencia",
     "nav.projects": "Proyectos",
-    "nav.contact": "Contacto",
+    "nav.education": "Educación",
     "nav.openMenu": "Abrir menú",
     "nav.closeMenu": "Cerrar menú",
     "profile.greeting": "Hola, mi nombre es",
