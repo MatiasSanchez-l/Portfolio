@@ -58,7 +58,7 @@ export interface MobileMenuButtonProps {
 
 export interface DesktopControlsProps extends LanguageProps {}
 
-export interface LogoProps extends BaseComponentProps {}
+export interface LogoProps extends BaseComponentProps, LanguageProps {}
 
 // Theme component props
 export interface ModeToggleProps extends BaseComponentProps {}

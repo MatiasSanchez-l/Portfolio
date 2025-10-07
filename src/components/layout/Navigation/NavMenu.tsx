@@ -17,7 +17,7 @@ export function NavMenu({ currentLang }: NavMenuProps) {
       <nav className="flex items-center justify-between relative w-full">
         {/* Left: Logo + Desktop Navigation */}
         <div className="flex items-center">
-          <Logo />
+          <Logo currentLang={currentLang} />
           <NavLinks 
             currentLang={currentLang} 
             className="hidden md:flex ml-8"

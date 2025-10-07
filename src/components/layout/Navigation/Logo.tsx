@@ -2,9 +2,11 @@ import React from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import type { LogoProps } from '@/types';
 
-export function Logo({ className }: LogoProps) {
+export function Logo({ className, currentLang }: LogoProps) {
+  const homeUrl = `/${currentLang}/`;
+  
   return (
-    <a href="/" className={`flex items-center ${className || ''}`}>
+    <a href={homeUrl} className={`flex items-center ${className || ''}`}>
       <Avatar className="w-8 h-8">
         <AvatarImage
           alt="Matias Sanchez"
