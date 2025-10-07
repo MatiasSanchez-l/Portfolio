@@ -23,6 +23,8 @@ export function Education({ currentLang }: EducationProps) {
       institution: "Universidad Nacional de La Matanza",
       degree: "Bachelor of Technology Management – Project Management",
       degreeKey: "education.unlam.bachelor.degree",
+      field: "Project Management",
+      fieldKey: "education.unlam.bachelor.field",
       period: "March 2024 – December 2025",
       periodKey: "education.unlam.bachelor.period"
     },
