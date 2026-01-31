@@ -41,15 +41,25 @@ export function Timeline({ currentLang }: TimelineProps) {
   };
 
   const currentPeriod = currentLang === 'es' 
-    ? `Julio 2023 – Actualidad · ${calculateDuration(new Date(2023, 6))}`
-    : `July 2023 – Present · ${calculateDuration(new Date(2023, 6))}`;
+    ? `Agosto 2025 – Actualidad · ${calculateDuration(new Date(2025, 7))}`
+    : `August 2025 – Present · ${calculateDuration(new Date(2025, 7))}`;
 
   const experiences: Experience[] = [
+    {
+      id: "santander-senior",
+      company: "Santander Tecnología Argentina",
+      position: "profile.experience.santander.senior.position",
+      period: currentPeriod,
+      location: "Argentina",
+      type: "profile.experience.santander.senior.type",
+      technologies: ["Java 17", "Spring Boot", "React", "Next.js", "OracleSQL", "GitHub Actions", "MacOS", "GIT", "Jira"],
+      description: "profile.experience.santander.senior.description"
+    },
     {
       id: "santander-ssr",
       company: "Santander Tecnología Argentina",
       position: "profile.experience.santander.ssr.position",
-      period: currentPeriod,
+      period: "profile.experience.santander.ssr.period",
       location: "Argentina",
       type: "profile.experience.santander.ssr.type",
       technologies: ["React", "Nextjs", "Formik", "Java", "Spring Boot", "MacOS", "GIT", "Jira"],

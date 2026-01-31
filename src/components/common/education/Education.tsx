@@ -13,6 +13,7 @@ interface EducationItem {
   periodKey: string;
   gpa?: string;
   gpaKey?: string;
+  link?: string;
 }
 
 export function Education({ currentLang }: EducationProps) {
@@ -28,7 +29,8 @@ export function Education({ currentLang }: EducationProps) {
       field: "Project Management",
       fieldKey: "education.unlam.bachelor.field",
       period: "March 2024 – December 2025",
-      periodKey: "education.unlam.bachelor.period"
+      periodKey: "education.unlam.bachelor.period",
+      link: "https://www.unlam.edu.ar/academicas/licenciatura-en-gestion-de-tecnologia/"
     },
     {
       id: "unlam-associate",
@@ -40,7 +42,8 @@ export function Education({ currentLang }: EducationProps) {
       period: "2019 – July 2022",
       periodKey: "education.unlam.associate.period",
       gpa: "GPA: 8.4 / 10",
-      gpaKey: "education.unlam.associate.gpa"
+      gpaKey: "education.unlam.associate.gpa",
+      link: "https://www.unlam.edu.ar/academicas/tecnicatura-universitaria-en-desarrollo-web/"
     }
   ];
 
@@ -58,9 +61,20 @@ export function Education({ currentLang }: EducationProps) {
 
           {/* Degree and Field */}
           <div className="mb-3">
-            <p className="text-lg font-semibold text-primary">
-              {t(edu.degreeKey)}
-            </p>
+            {edu.link ? (
+              <a 
+                href={edu.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-semibold text-primary hover:text-primary/80 hover:underline transition-colors inline-block"
+              >
+                {t(edu.degreeKey)}
+              </a>
+            ) : (
+              <p className="text-lg font-semibold text-primary">
+                {t(edu.degreeKey)}
+              </p>
+            )}
             {edu.fieldKey && (
               <p className="text-base text-muted-foreground">
                 {t(edu.fieldKey)}
